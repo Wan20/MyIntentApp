@@ -8,7 +8,7 @@ import android.widget.TextView;
 public class MoveWithDataActivity extends AppCompatActivity {
     public static String EXTRA_AGE = "extra_age";
     public static String EXTRA_NAME = "extra_name";
-    public static  String EXTRA_REGION = "extra_region";
+    public static String EXTRA_REGION = "extra_region";
     public static String EXTRA_TODO = "extra_todo";
     private TextView tvDataReceived;
 
@@ -24,7 +24,7 @@ public class MoveWithDataActivity extends AppCompatActivity {
         String todo = getIntent().getStringExtra(EXTRA_TODO);
         String region = getIntent().getStringExtra(EXTRA_REGION);
 
-        String text = "My name is " + name + ", My Age is " + age+ ", I'm " + todo
+        String text = "My name is " + name + ", My Age is " + age + ", I'm " + todo
                 + " in " + region;
         tvDataReceived.setText(text);
     }

@@ -9,6 +9,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button btnMoveActivity;
     private Button btnMoveWithDataActivity;
+    private Button btnMoveWithObject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +20,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnMoveActivity.setOnClickListener(this);
         btnMoveWithDataActivity = (Button) findViewById(R.id.btn_move_activity_data);
         btnMoveWithDataActivity.setOnClickListener(this);
+        btnMoveWithObject = (Button)findViewById(R.id.btn_move_activity_object);
+        btnMoveWithObject.setOnClickListener(this);
     }
 
     @Override
@@ -36,6 +39,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 moveWithDataIntent.putExtra(MoveWithDataActivity.EXTRA_REGION, "Indonesia");
                 moveWithDataIntent.putExtra(MoveWithDataActivity.EXTRA_TODO, "Learning Intent From Dicoding Academy");
                 startActivity(moveWithDataIntent);
+                break;
+
+            case R.id.btn_move_activity_object:
+                Person mPerson = new Person();
+                mPerson.setName("DicodingAcademy");
+                mPerson.setAge(5);
+                mPerson.setEmail("wandy20number@gmail.com");
+                mPerson.setCity("Jakarta");
+                Intent moveWithObjectIntent = new Intent(MainActivity.this, MoveWithObjectActivity.class);
+                moveWithObjectIntent.putExtra(MoveWithObjectActivity.EXTRA_PERSON, mPerson);
+                startActivity(moveWithObjectIntent);
                 break;
         }
     }
